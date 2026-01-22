@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}<title>Welcome</title>{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "posts/post.css" %}">
+    <link rel="stylesheet" href="{% static "posts/homepage.css" %}">
+{% endblock css %}
+
+{% block content %}
+  
+
+   <section id="welcome">
+    <header>
+        <img src="{% static "posts/images/akatsuki.jpg" %}" alt="Sameer Husain - The author of this blog">
+        <h1>Shiney Monkey Blogs</h1>
+    </header>
+    <p>Hi, My name is sameer and this is my (idk what number to give) website about creating blog Posts</p>
+   </section>
+
+   <section id="latest-posts">
+    <h2>My latest Thoughts</h2>
+    <ul>
+        {% for post in posts  %}
+        {% include "posts/partials/post.html" %}
+        {% endfor %}
+    </ul>
+   </section>
+
+   <section id="about">
+    <h2>What I do</h2>
+    <p>I like programming, I love learning and I love discovering new things to eat and different cuisines in general</p>
+    <p>Learning Fast, Building Faster - On a mission to push the boundaries of what intelligent software can do!</p>
+   </section>
+    
+
+{% endblock content %}
