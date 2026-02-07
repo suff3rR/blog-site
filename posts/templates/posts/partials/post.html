@@ -3,7 +3,7 @@
 <li>
             <artice class="post">
                 <a href="{% url "individual-posts" slug=post.slug %}">
-                    <img src="{% static "posts/images/"|add:post.image %}" alt="Mountain Hiking">
+                    <img src="{% static "posts/images/"|add:post.image %}" alt="{{post.title}}">
                     <div class="post-content">
                         <h3>{{post.title}}</h3>
                         <p>
